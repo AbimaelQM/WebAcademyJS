@@ -2,16 +2,20 @@
 
 //variaveis
 
+//variavel sem escopo
 var x = 10
 
+//varivavel com escopo
 let y = ""
 
+//varivael com escopo e imutavel
 const z = ''
 
 y = 20
 
 console.log(y)
 
+//se if for verdadeiro e vai ser pq 1 retorna true ele altera a variavel Y no escopo do bloco para 15 e escreve o valor no console
 if(1){
    let y = 15
     console.log(y)
@@ -19,15 +23,17 @@ if(1){
 
 console.log(y)
 
+//declara uma constante nome com valor "Abimael"
 const nome = "Abimael"
 
-console.log(nome)
-console.log(typeof nome)
+console.log(nome)//escreve o valor que o nome tem no console
+console.log(typeof nome)//verifica o tipo do nome
 
+//declara uma constante idade com valor 21
 const idade = 21
 
-console.log(idade)
-console.log(typeof idade)
+console.log(idade)//escreve o valor que o idade tem no console
+console.log(typeof idade)//verifica o tipo de idade
 
 
 const peso = 61.2
@@ -35,13 +41,18 @@ const peso = 61.2
 console.log(peso)
 console.log(typeof peso)
 
+*/
+
 //null
+//atribui o valor null, que em um condicional retorna false
 const nada = null
 console.log(nada)
 console.log(typeof nada)
-
+/*
 
 //undefined
+
+//atribui o valor undefined, que em um condicional retorna false
 let indefinido
 console.log(indefinido)
 console.log(typeof indefinido)
@@ -54,6 +65,7 @@ console.log(typeof vouf)
 
 
 //array
+//declaração de um array com elementos de tipos variados, o array em si é um tipo Object
 const vetor = ['java', 10, false]
 console.log(vetor[1])
 console.log(typeof vetor)
@@ -62,6 +74,7 @@ console.log(vetor.length)
 
 /*
 //objeto literals
+//declaração de um objeto com proriedade chave:valor com tipos strings e number e o objeto é um tipo array
 const usuario = {
     email: 'abimaelqm@hotmail.com',
     senha: '51655165',
@@ -73,6 +86,7 @@ console.log(usuario.nome)
 console.log(typeof usuario)
 
 const nome = 'Abimael'
+//transforma a string nome em um vetor com os caracteres da string
 const stringParaVetor = nome.split('')
 console.log(stringParaVetor)
 console.log(Object(nome))
@@ -90,17 +104,22 @@ console.log(nomeMaisculo.slice(1,6))
 //arry vetor lista
 const lista = ['a','b','c','d','e','f','g']
 
-// console.log(lista.length)
+//.length mostra o tamanho do array
+// console.log(lista.length) 
 // console.log(lista[1])
 // console.log(typeof lista)
 // console.log(lista)
 
+//push adiciona no final array
 // lista.push('bb')
 // console.log(lista)
+//pop retira o ultimo elemento do array
 // lista.pop()
 // console.log(lista)
+//shift retira o primeiro elemento do array
 // lista.shift()
 // console.log(lista)
+//unshift adiciona no final do array
 // lista.unshift('bala')
 // console.log(lista)
 
@@ -118,6 +137,7 @@ console.log(produto.cor)
 console.log(produto['cor'])
 
 //destructuring - recurso de objetos para extrair variaveis de dentro dele
+
 
 const { preco, emEstoque } = produto
 console.log(preco, emEstoque)
@@ -258,7 +278,6 @@ const fora = () => (x= 3 ,() => x+5)()//função callback?????
 
 console.log(fora())
 
-
 //Orientação a objetos
 
 class Produto {
@@ -330,4 +349,5 @@ paragrafos[2].remove()
 const botao = document.querySelector('#botao')
 
 botao.addEventListener('click', () => console.log("Testando o botao"))
+
 
