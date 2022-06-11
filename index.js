@@ -258,3 +258,76 @@ const fora = () => (x= 3 ,() => x+5)()//função callback?????
 
 console.log(fora())
 
+
+//Orientação a objetos
+
+class Produto {
+    constructor(nome,preco){
+        this.nome = nome
+        this.preco = preco
+    }
+
+
+    detalhesDoProduto = () => `O preço do produto ${this.nome} é R$${this.preco}`
+
+}
+
+const oculos = new Produto("Óculos", 19.99)
+
+console.log(oculos.detalhesDoProduto())
+console.log(oculos)
+
+const meia = new Produto("Meia", 2.55) 
+
+console.log(meia.detalhesDoProduto())
+console.log(meia)
+
+
+//heranças 
+
+class ProdutoComTamanho extends Produto {
+    constructor(nome, preco, tamanho){
+        super(nome,preco)
+        this.tamanho = tamanho
+    }
+
+    outraMensagem = (adjetivo) => `O produto ${this.nome} é ${adjetivo} demais`
+
+}
+
+const camisa = new ProdutoComTamanho("Camisa", 253.56, "M")
+console.log(camisa.detalhesDoProduto())
+console.log(camisa.outraMensagem("Linda"))
+
+//DOM - Document Object Model
+
+//getElementById
+const titulo = document.getElementById('titulo')
+console.log(titulo)
+
+//querySelector
+const mesmoTitulo = document.querySelector('#titulo')
+console.log(mesmoTitulo)
+
+const paragrafos = document.querySelectorAll('.texto')
+console.log(paragrafos)
+
+
+paragrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
+
+
+//manipulação
+
+const textoAleatorio = paragrafos[0].textContent
+
+paragrafos[3].innerHTML = textoAleatorio
+paragrafos[0].style.backgroundColor = 'red'
+
+titulo.innerText = 'Proximo video'
+
+paragrafos[2].remove()
+
+const botao = document.querySelector('#botao')
+
+botao.addEventListener('click', () => console.log("Testando o botao"))
+
