@@ -59,6 +59,7 @@ console.log(typeof indefinido)
 
 
 //bool
+//um boolean pode ser true ou false
 const vouf = true
 console.log(vouf)
 console.log(typeof vouf)
@@ -124,7 +125,7 @@ const lista = ['a','b','c','d','e','f','g']
 // console.log(lista)
 
 //object literals - estrutura que descreve entidade
-
+//criação de um objeto literal que representa uma entidade, no caso um produto
 const produto = {
     nome: 'Camisa',
     preco: 9.99,
@@ -138,10 +139,11 @@ console.log(produto['cor'])
 
 //destructuring - recurso de objetos para extrair variaveis de dentro dele
 
-
+//para facilitar o uso de uma propriedade do obejto se usa a desistruturação, que deve usar variaveis com o mesmo nome da propriedade do objeto 
 const { preco, emEstoque } = produto
 console.log(preco, emEstoque)
 
+//para facilitar o acesso aos dados do vetor se usa a desistruturação, mas diferente do objeto que tem propriedades, o do vetor pega os valores e poe na variavel pela ordem que estã no vetor
 const [ char1, char2 ] = lista
 console.log(char1)
 console.log(char2)
