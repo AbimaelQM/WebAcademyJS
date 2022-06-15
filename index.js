@@ -180,7 +180,7 @@ if(texto == '0'){
 }else console.log('os dados não sao iguais')
 
 //operador ternario
-
+//antes da ? ele verifica se é verdadeiro, se for ele executa o que esta depois da interrogação e antes dos dois pontos(:) se for falso, executa o comando depois dos dois pontos(:)
 const resultado = n>20 ? true:false
 
 console.log(resultado)
@@ -191,13 +191,14 @@ console.log(typeof resultado)
 
 let cont = 0
 const listar = [1,2,3,4,5,6,7]
+//enquanto o index for menor que o tamanho do array ele exibe o elemento do array no index da vez
 while(cont< listar.length) {
     console.log('O \'elemento da lista\' é '+listar[cont]+'.')
     cont++
 }
 
 const outraLista = ['a','jota', 'ana', 'ja']
-
+//do index 0 ate o tamanho do array - 1 ele exibe o elemento do index
 for(let contador = 0; contador < outraLista.length; contador++){
     console.log(`O elemento da lista é ${outraLista[contador]}.`)
 }
@@ -208,6 +209,8 @@ console.log(`\``==="`")
 const a = 3, b = 5
 
 console.log("Oito é "+ (a+b)+ "\ne não "+(2*a+b))
+
+//template string, usado para poder escrever constantes ou variaveis junto a string sem precisar concatenar, isso usando crase e onde for por algum dado, usar `${dado}`
 console.log(`Oito é ${a+b} 
 e não ${2*a+b}`)
 
@@ -216,7 +219,7 @@ const nomes = ['Abimael', 'Cleyciane', 'Paulo', 'Victor']
 
 nomes.forEach((nome)=> console.log(nome))
 
-
+//o map percorre e altera passando o array alterado para outra "variavel"
 const nomesModificados = nomes.map((nome) => {
     if(nome === 'Paulo')
         return nome = 'O grande'
@@ -226,14 +229,16 @@ const nomesModificados = nomes.map((nome) => {
 
 nomesModificados.forEach((nome)=> console.log(nome))
 
-
-const numerosGrandes = ['4','9','44','66','55','99'].filter((numero) => numero>10)
+//flter cria outro array com base em um array e a condição implantada pelo filter
+const numerosGrandes = [4, 9, 44, 66, 55, 99].filter((numero) => numero>10)
 
 console.log(numerosGrandes)
 
+//reduce faz a soma dos elementos do array
 console.log(numerosGrandes.reduce((accumulator, number) => accumulator + number,0))
 
-*/
+
+
 
 //funções
 
@@ -243,7 +248,8 @@ function minhaFuncao(){
 
 minhaFuncao()
 
-const funcao = function minhaFuncao(nome, sobrenome /*Na criação da função se chama parametros */){
+// Na criação da função se chama parametros
+const funcao = function minhaFuncao(nome, sobrenome ){
     console.log(typeof nome)
     console.log(`o nome completo é ${nome} ${sobrenome}`)
     return (`${nome} ${sobrenome}`)
@@ -252,11 +258,12 @@ const funcao = function minhaFuncao(nome, sobrenome /*Na criação da função s
 const nome = "Abimael"
 const sobrenome = "Lima"
 
-
-console.log(funcao(nome,sobrenome /*Na criação da função se chama parametros */))
+//Na criação da função se chama parametros (nome,sobrenome )
+console.log(funcao(nome,sobrenome))
 
 //arrow functions
 
+//se o que ela faz e apenas uma execução entao nao precisa usar o return pois ja retorna por si.
 const soma = (a,b)=> a+b
 
 soma()
@@ -265,10 +272,11 @@ const lista = ['Esse cara é maior','a','b','c','d']
 
 console.log(lista.map( elemento => elemento.length))
 
+//Clouseres
 
 let x = 10
 
-const fora = () => (x= 3 ,() => x+5)()//função callback?????
+//O x que é chamado para o calculo é o que esta mais proximo do encapsulamento que foi chamado, de dentro pra fora
 
 // const fora = () => {
 //     let x = 2
@@ -278,26 +286,38 @@ const fora = () => (x= 3 ,() => x+5)()//função callback?????
 //     return somaMais5()
 // }
 
+//faz o mesmo que a função acima so que com a escrita reduzida
+const fora = () => (x= 3 ,() => x+5)()
+
+
 console.log(fora())
 
+*/
+
+/*
 //Orientação a objetos
 
+//criação de uma classe Produto
+//seu nome por padrao deve iniciar com letra maiuscula
 class Produto {
+    //construtor define as caracteristicas da classe
     constructor(nome,preco){
         this.nome = nome
         this.preco = preco
     }
 
-
+    //metodo d
     detalhesDoProduto = () => `O preço do produto ${this.nome} é R$${this.preco}`
 
 }
 
+//Criação do objeto oculos a partir da classe Produto
 const oculos = new Produto("Óculos", 19.99)
 
 console.log(oculos.detalhesDoProduto())
 console.log(oculos)
 
+//Criação do objeto meia a partir da classe Produto
 const meia = new Produto("Meia", 2.55) 
 
 console.log(meia.detalhesDoProduto())
@@ -305,51 +325,151 @@ console.log(meia)
 
 
 //heranças 
-
+//Criando uma classe ProdutoTamanho que recebe a classe Produto como herança
 class ProdutoComTamanho extends Produto {
     constructor(nome, preco, tamanho){
+        // passando as caracteristicas de Produto por meio do super() para o ProdutoTamanho
         super(nome,preco)
         this.tamanho = tamanho
     }
-
+    //Ele tambem recebe os metodos criados na classe pai
     outraMensagem = (adjetivo) => `O produto ${this.nome} é ${adjetivo} demais`
 
 }
-
+//criação do objeto camisa a partir da classe filha ProdutoTamanho 
 const camisa = new ProdutoComTamanho("Camisa", 253.56, "M")
 console.log(camisa.detalhesDoProduto())
 console.log(camisa.outraMensagem("Linda"))
+*/
 
+/*
 //DOM - Document Object Model
 
 //getElementById
+//capturando o titulo pelo id usando o getElementById
 const titulo = document.getElementById('titulo')
 console.log(titulo)
 
 //querySelector
+
+//capturando o titulo pelo id usando o querySelector
 const mesmoTitulo = document.querySelector('#titulo')
 console.log(mesmoTitulo)
 
+//capturando todos os paragrafos com a class texto
 const paragrafos = document.querySelectorAll('.texto')
 console.log(paragrafos)
 
-
+// percorrendo todos o paragrafos e colocando em caixa alta
 paragrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
 
 
 //manipulação
 
+//capturando o texto de um dos paragrafos
 const textoAleatorio = paragrafos[0].textContent
 
+//usando o texto capturado do paragrafoe colocando em outro
 paragrafos[3].innerHTML = textoAleatorio
+//mudando o estilo de um dos paragrados
 paragrafos[0].style.backgroundColor = 'red'
 
 titulo.innerText = 'Proximo video'
 
+//remove() remove o elemento html
 paragrafos[2].remove()
 
+//Captura o elemento html e salva na constante botao
 const botao = document.querySelector('#botao')
 
+//adicionaum evento click no botao que mostra o texto "Testando o botao" no console.log
 botao.addEventListener('click', () => console.log("Testando o botao"))
+*/
+
+
+// JavaScript Sincrono
+
+// function somar(){
+//     const resultado = 1+1
+//     if(resultado===2) sucesso()
+//     else erro()
+// }
+
+// function sucesso(){
+//     console.log("Sucesso! A soma foi 2")
+// }
+
+// function erro(){
+//     console.log("A soma não foi 2. Alguma coisa deu errado...")
+// }
+
+// somar()
+
+/*
+//Promisses sao classes em JavaScript. Metodos: then e catch
+
+const p = new Promise((resolve, reject) => {
+    const resultado = 1+1
+    if(resultado===2)resolve("Sucesso! A soma foi 2")
+    else reject("A soma não foi 2. Alguma coisa deu errado...")
+})
+
+p
+    .then((mensagem) => {console.log(`Isso é o que está dentro do then: ${mensagem}`)})
+    .catch((mensagem) => {console.log(`Isso é o que está dentro do catch: ${mensagem}`)})
+
+console.log(p)
+console.log("teste")
+*/
+
+/*
+//callback
+const melhorProgramador = 'Abimael'
+
+function quemEhOMelhor (callback, CallbackErro) {
+   
+    if(melhorProgramador==='Abimael'){
+        callback({
+            nome: melhorProgramador,
+            mensagem: "Omilior"
+        })
+    }else {
+        CallbackErro({
+            mensagem1: 'Está errado...',
+            mensagem2: '? sério?'
+        })
+    }
+}
+
+quemEhOMelhor(
+    ({nome, mensagem}) => {console.log(`${nome} ${mensagem}`)},
+    ({mensagem1, mensagem2}) => {console.log(mensagem1+ melhorProgramador +mensagem2)}
+)
+*/
+
+// Transformando callback em promise
+const melhorProgramador = 'Abimael'
+
+function quemEhOMelhor () {
+    return new Promise ((resolve, reject) => {
+        if(melhorProgramador==='Abimael'){
+            resolve({
+                nome: melhorProgramador,
+                mensagem: "Omilior"
+            })
+        }else {
+            reject({
+                mensagem1: 'Está errado...',
+                mensagem2: '? sério?'
+            })
+        }
+    })
+    
+}
+console.log(quemEhOMelhor())
+
+quemEhOMelhor()
+    .then(({nome, mensagem}) => {console.log(`${nome} ${mensagem}`)})
+    .catch(({mensagem1, mensagem2}) => {console.log(mensagem1+ melhorProgramador +mensagem2)})
 
 
