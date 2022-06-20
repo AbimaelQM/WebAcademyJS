@@ -344,7 +344,7 @@ console.log(camisa.outraMensagem("Linda"))
 
 /*
 //DOM - Document Object Model
-
+*/
 //getElementById
 //capturando o titulo pelo id usando o getElementById
 const titulo = document.getElementById('titulo')
@@ -384,7 +384,7 @@ const botao = document.querySelector('#botao')
 
 //adicionaum evento click no botao que mostra o texto "Testando o botao" no console.log
 botao.addEventListener('click', () => console.log("Testando o botao"))
-*/
+
 
 
 // JavaScript Sincrono
