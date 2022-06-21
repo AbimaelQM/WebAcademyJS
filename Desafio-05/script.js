@@ -1,6 +1,11 @@
 
 fetch('http://jsonplaceholder.typicode.com/users')
-    .then(conteudo => conteudo.json())
+    .then(conteudo => {
+        if(!conteudo.ok) {
+            throw new Error(`Erro no HTTP, status ${conteudo.status}`)
+        }
+        return conteudo.json()
+    })
     .then(usuarios => {
         const nomes = usuarios.reduce((accumulator, usuarios) => {
             accumulator += `<li>${usuarios.name}</li>`
@@ -9,3 +14,4 @@ fetch('http://jsonplaceholder.typicode.com/users')
         const ul = document.querySelector('.unico')
         ul.innerHTML = nomes
     })
+    .catch(error => console.log(error.message))
